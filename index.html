@@ -57,11 +57,24 @@
         }
 
         .logo {
-            font-size: 1.5em;
-            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.3em;
+            font-weight: 700;
             color: var(--primary);
             text-shadow: 0 0 20px var(--glow);
-            letter-spacing: -1px;
+            letter-spacing: 0.5px;
+        }
+
+        .logo img {
+            height: 45px;
+            filter: drop-shadow(0 0 10px var(--glow));
+            transition: transform 0.3s;
+        }
+
+        .logo:hover img {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .nav-links {
@@ -136,10 +149,11 @@
         }
 
         .hero h1 {
-            font-size: 4em;
-            margin-bottom: 1rem;
+            font-size: 3.5em;
+            margin-bottom: 1.5rem;
             font-weight: 900;
-            letter-spacing: -2px;
+            letter-spacing: 1px;
+            line-height: 1.3;
             animation: fadeInUp 1s;
             background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -159,10 +173,20 @@
         }
 
         .hero p {
-            font-size: 1.5em;
-            margin-bottom: 2.5rem;
+            font-size: 1.4em;
+            margin-bottom: 1.5rem;
             color: var(--secondary);
             animation: fadeInUp 1s 0.2s backwards;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em !important;
+            opacity: 0.9;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
         }
 
         .cta-buttons {
@@ -261,12 +285,14 @@
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: #a0a0a0;
             margin-bottom: 4rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
         }
 
         /* 關於我們 */
@@ -362,8 +388,9 @@
 
         .about-card p {
             color: #c0c0c0;
-            font-size: 1.1em;
-            line-height: 1.8;
+            font-size: 1.05em;
+            line-height: 2;
+            letter-spacing: 0.5px;
         }
 
         /* 業務服務 */
@@ -423,8 +450,10 @@
 
         .service-card p {
             color: #c0c0c0;
-            font-size: 1.1em;
+            font-size: 1.05em;
             margin-bottom: 1.5rem;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
         }
 
         .service-card ul {
@@ -494,7 +523,9 @@
         .product-card p {
             color: #c0c0c0;
             margin-bottom: 1rem;
-            line-height: 1.8;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            font-size: 1.02em;
         }
 
         .product-tag {
@@ -650,7 +681,10 @@
     <!-- 導航列 -->
     <nav id="nav">
         <div class="nav-container">
-            <div class="logo">遊戲家資訊科技</div>
+            <div class="logo">
+                <img src="one-logo.jpg" alt="ONE桌遊">
+                遊戲家資訊科技
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">首頁</a></li>
                 <li><a href="#about">關於我們</a></li>
@@ -667,9 +701,12 @@
         <div class="glow-orb" style="top: 20%; left: 10%;"></div>
         <div class="glow-orb" style="bottom: 20%; right: 10%;"></div>
         <div class="hero-content">
-            <h1>遊戲家資訊科技有限公司</h1>
+            <h1>遊戲家資訊科技<br>有限公司</h1>
             <p>🤖 AI 智能系統開發 × 連鎖品牌數位轉型專家</p>
-            <p style="font-size: 1.2em; opacity: 0.9;">🎮 旗下經營 105 家 ONE桌遊自助麻將館 | ⚡ 創立 3 年新創團隊緊跟 AI 浪潮</p>
+            <p class="hero-subtitle">
+                🎮 旗下經營 105 家 ONE桌遊自助麻將館<br>
+                ⚡ 創立 3 年新創團隊緊跟 AI 浪潮
+            </p>
             <div class="cta-buttons">
                 <a href="#services" class="btn btn-primary">探索服務</a>
                 <a href="#contact" class="btn btn-secondary">立即諮詢</a>
@@ -875,7 +912,10 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="logo" style="margin-bottom: 2rem; font-size: 2em;">遊戲家資訊科技有限公司</div>
+            <div class="logo" style="margin-bottom: 2rem; font-size: 2em; justify-content: center;">
+                <img src="one-logo.jpg" alt="ONE桌遊" style="height: 60px;">
+                遊戲家資訊科技有限公司
+            </div>
             
             <div class="footer-links">
                 <a href="#home">首頁</a>
