@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智摸科技 TouchMo Technology | AI智能解決方案 | ONE桌遊品牌營運</title>
+    <meta name="description" content="智摸科技專注於AI智能系統開發、連鎖品牌數位轉型，旗下經營ONE桌遊90家自助麻將館，提供企業級軟體開發、AI客服、智能選址等創新服務">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* 導航列 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s 0.2s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s 0.4s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section 通用樣式 */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 關於我們 */
+        #about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-card p {
+            color: #64748b;
+            font-size: 1.1em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* 業務服務 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .service-card:nth-child(2) {
+            border-top-color: var(--secondary);
+        }
+
+        .service-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3.5em;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 2em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: #64748b;
+            font-size: 1.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: #64748b;
+        }
+
+        .service-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        /* 產品展示 */
+        #products {
+            background: var(--dark);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-10px);
+        }
+
+        .product-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .product-card p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* 聯絡我們 */
+        #contact {
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h3 {
+            font-size: 2em;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2em;
+            color: var(--primary);
+        }
+
+        .contact-text h4 {
+            font-size: 1.2em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text p {
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9em;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 動畫效果 */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="logo">智摸科技</div>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#services">服務項目</a></li>
+                <li><a href="#products">產品方案</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>智摸科技 TouchMo</h1>
+            <p>AI 智能系統開發 × 連鎖品牌數位轉型專家</p>
+            <p style="font-size: 1.2em; opacity: 0.9;">旗下經營 90 家 ONE桌遊自助麻將館 | 累積 10 年實戰經驗</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary">探索服務</a>
+                <a href="#contact" class="btn btn-secondary">立即諮詢</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">關於智摸科技</h2>
+            <p class="section-subtitle">從實戰經驗出發，打造真正能解決問題的 AI 智能系統</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">90+</span>
+                    <span class="stat-label">合作店家</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10年</span>
+                    <span class="stat-label">品牌經營經驗</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">AI 智能系統</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">客戶滿意度</span>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎯 我們是誰</h3>
+                    <p>智摸科技是一家專注於 AI 智能系統開發與連鎖品牌數位轉型的科技公司。旗下經營 ONE桌遊品牌，擁有 90 家自助麻將館的實戰經驗，深刻理解連鎖品牌的營運痛點。</p>
+                </div>
+                <div class="about-card">
+                    <h3>💡 我們的優勢</h3>
+                    <p>不同於傳統軟體公司，我們自己就是連鎖品牌經營者。每一套系統都是從實際需求出發，經過 90 家店的驗證，確保真正能解決問題、創造價值。</p>
+                </div>
+                <div class="about-card">
+                    <h3>🚀 我們的使命</h3>
+                    <p>讓中小企業也能享受大企業級的 AI 智能系統，透過技術降低營運成本、提升管理效率，幫助更多創業者實現夢想。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服務項目 -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">服務項目</h2>
+            <p class="section-subtitle">三大核心業務，全方位解決您的需求</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎮</div>
+                    <h3>ONE桌遊品牌</h3>
+                    <p>自助麻將館連鎖品牌，全台 90 家店，提供創新的無人化娛樂體驗。</p>
+                    <ul>
+                        <li>加盟展店輔導</li>
+                        <li>智能選址服務</li>
+                        <li>營運管理系統</li>
+                        <li>教育訓練支援</li>
+                        <li>行銷推廣協助</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI 智能解決方案</h3>
+                    <p>為企業打造客製化 AI 系統，提升營運效率、降低人力成本。</p>
+                    <ul>
+                        <li>AI 客服系統（24/7 自動回覆）</li>
+                        <li>AI 選址系統（數據驅動決策）</li>
+                        <li>AI 行銷設計（自動生成素材）</li>
+                        <li>智能倉儲管理</li>
+                        <li>員工打卡系統</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>企業軟體開發</h3>
+                    <p>客製化系統開發，從需求分析到上線維護一條龍服務。</p>
+                    <ul>
+                        <li>會員管理系統</li>
+                        <li>訂單管理系統</li>
+                        <li>庫存管理系統</li>
+                        <li>LINE Bot 開發</li>
+                        <li>網站 / App 開發</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 產品方案 -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title" style="color: white; -webkit-text-fill-color: white;">明星產品</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">已驗證的 AI 智能系統，立即可用</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>AI 客服系統</h3>
+                    <p>24/7 自動回覆客戶問題，節省 80% 客服人力成本。支援多店管理、自訂規則、知識庫管理。</p>
+                    <span class="product-tag">$4,000/店/月</span>
+                </div>
+
+                <div class="product-card">
+                    <h3>智能選址系統</h3>
+                    <p>結合 Google Maps、內政部數據、AI 分析，科學化評估店面地點，降低選址風險。</p>
+                    <span class="product-tag">$50,000/次起</span>
+                </div>
+
+                <div class="product-card">
+                    <h3>倉儲管理系統</h3>
+                    <p>進出貨管理、庫存追蹤、低庫存警示、LINE Bot 通知，適合多店管理。</p>
+                    <span class="product-tag">$2,000/店/月</span>
+                </div>
+
+                <div class="product-card">
+                    <h3>員工打卡系統</h3>
+                    <p>GPS 定位打卡、多店綁定、智能班別判斷、自動薪資計算，零紙本管理。</p>
+                    <span class="product-tag">$1,500/店/月</span>
+                </div>
+
+                <div class="product-card">
+                    <h3>AI 行銷設計套件</h3>
+                    <p>自動生成海報、貼文、優惠券，替代設計師成本，保持品牌一致性。</p>
+                    <span class="product-tag">$1,500/店/月</span>
+                </div>
+
+                <div class="product-card">
+                    <h3>客製化開發</h3>
+                    <p>依據您的需求量身打造專屬系統，從規劃到上線全程支援。</p>
+                    <span class="product-tag">客製報價</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我們 -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">聯絡我們</h2>
+            <p class="section-subtitle">讓我們一起打造您的 AI 智能系統</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>聯絡資訊</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <h4>LINE 官方帳號</h4>
+                            <p>@touchmo （即時諮詢）</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <h4>電子信箱</h4>
+                            <p>service@touchmo.tech</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div class="contact-text">
+                            <h4>公司地址</h4>
+                            <p>台灣</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>服務時間</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <h4>線上客服</h4>
+                            <p>週一至週五 09:00 - 18:00<br>（AI 客服 24/7 全天候）</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🎯</div>
+                        <div class="contact-text">
+                            <h4>諮詢預約</h4>
+                            <p>提供免費初步諮詢<br>歡迎預約詳談</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 2rem; font-size: 2em; -webkit-text-fill-color: white; color: white;">智摸科技 TouchMo</div>
+            
+            <div class="footer-links">
+                <a href="#home">首頁</a>
+                <a href="#about">關於我們</a>
+                <a href="#services">服務項目</a>
+                <a href="#products">產品方案</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+
+            <p class="copyright">
+                © 2026 智摸科技 TouchMo Technology. All rights reserved.<br>
+                ONE桌遊品牌 | AI 智能系統開發 | 企業數位轉型專家
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 導航列滾動效果
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 元素進入視窗動畫
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .product-card, .about-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
