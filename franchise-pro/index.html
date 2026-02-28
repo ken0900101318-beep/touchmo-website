@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE桌遊 加盟說明簡報（專業版）</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/white.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        
+        .reveal {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+        }
+        
+        /* 超大數字效果 */
+        .mega-number {
+            font-size: 15em;
+            font-weight: 900;
+            line-height: 0.9;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* 爆炸性標題 */
+        .explosive-title {
+            font-size: 5em;
+            font-weight: 900;
+            color: #ff6b35;
+            text-shadow: 3px 3px 0px #f7931e, 6px 6px 0px rgba(0,0,0,0.1);
+            letter-spacing: -0.02em;
+        }
+        
+        /* 霓虹效果 */
+        .neon-text {
+            font-size: 4em;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 
+                0 0 10px #ff6b35,
+                0 0 20px #ff6b35,
+                0 0 30px #ff6b35,
+                0 0 40px #f7931e,
+                0 0 70px #f7931e,
+                0 0 80px #f7931e,
+                0 0 100px #f7931e;
+        }
+        
+        /* 對比卡片 */
+        .comparison-box {
+            background: linear-gradient(135deg, #fff 0%, #fffbf5 100%);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 4px solid #ff6b35;
+            position: relative;
+        }
+        
+        .comparison-box::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 35px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        /* VS 對決效果 */
+        .vs-badge {
+            font-size: 6em;
+            font-weight: 900;
+            color: #fff;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            width: 2.5em;
+            height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.5);
+            margin: 0 auto;
+        }
+        
+        /* 進度條效果 */
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 50px;
+            height: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            height: 100%;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 30px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.5em;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+        }
+        
+        /* 脈衝動畫 */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* 發光效果 */
+        .glow-box {
+            background: linear-gradient(135deg, #fff5f0, #fffbf0);
+            border: 3px solid #ff6b35;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 
+                0 0 20px rgba(255, 107, 53, 0.3),
+                0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        /* 圖示樣式 */
+        .icon-huge {
+            font-size: 8em;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+        }
+        
+        /* 統計數字卡片 */
+        .stat-card {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+            transform: translateY(0);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-card .number {
+            font-size: 5em;
+            font-weight: 900;
+            line-height: 1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* 時間軸 */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(180deg, #ff6b35, #f7931e);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #ff6b35;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+            z-index: 10;
+        }
+        
+        /* 價格標籤 */
+        .price-tag {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            font-size: 3em;
+            font-weight: 900;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.4);
+            display: inline-block;
+            transform: rotate(-3deg);
+        }
+        
+        /* Grid 佈局 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: 震撼封面 -->
+            <section data-background="linear-gradient(135deg, #fff 0%, #fff5f0 100%)">
+                <div style="margin-bottom: 2rem;">
+                    <div class="explosive-title">ONE桌遊</div>
+                    <div style="font-size: 2em; color: #666; margin-top: 1rem;">加盟說明簡報</div>
+                </div>
+                
+                <div class="glow-box pulse-animation" style="max-width: 900px; margin: 3rem auto;">
+                    <div style="font-size: 3em; font-weight: 900; color: #ff6b35; margin-bottom: 1rem;">
+                        💰 月賺 17 萬起
+                    </div>
+                    <div style="font-size: 2em; color: #333; font-weight: 700;">
+                        12 個月回本 · 躺著也能賺
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; font-size: 1.5em; color: #999;">
+                    全台最大自助桌遊連鎖品牌 · 105 家店驗證成功
+                </div>
+            </section>
+
+            <!-- Slide 2: 超大數字衝擊 -->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">一個被嚴重低估的市場</h2>
+                
+                <div class="grid-2" style="margin-top: 3rem;">
+                    <div style="text-align: center;">
+                        <div class="mega-number">500</div>
+                        <div style="font-size: 2em; font-weight: 700; color: #333; margin-top: 1rem;">萬人</div>
+                        <div style="font-size: 1.3em; color: #666; margin-top: 0.5rem;">台灣會打麻將的人數</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="mega-number" style="background: linear-gradient(135deg, #e74c3c, #c0392b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">80<span style="font-size: 0.5em;">%</span></div>
+                        <div style="font-size: 2em; font-weight: 700; color: #333; margin-top: 1rem;">供給缺口</div>
+                        <div style="font-size: 1.3em; color: #666; margin-top: 0.5rem;">傳統麻將館無法滿足需求</div>
+                    </div>
+                </div>
+                
+                <div class="price-tag" style="margin-top: 3rem;">
+                    💡 商機 = 500 萬人 × 80% 缺口
+                </div>
+            </section>
+
+            <!-- Slide 3: VS 對決 -->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">為什麼傳統麻將館都在倒？</h2>
+                
+                <div class="grid-2" style="font-size: 0.9em; margin-top: 2rem;">
+                    <div class="comparison-box" style="border-color: #e74c3c; background: linear-gradient(135deg, #ffebee, #ffcdd2);">
+                        <h3 style="color: #c0392b; font-size: 2em; margin-bottom: 1.5rem;">❌ 傳統麻將館</h3>
+                        <div style="text-align: left; line-height: 2;">
+                            <div style="font-size: 1.2em; margin: 1rem 0;">🏚️ 環境老舊、煙味重</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">💰 人事成本高（需 3-5 人）</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">⏰ 只能白天營業（12 小時）</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">😰 年輕人不敢進入</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">📉 月淨利 3-5 萬</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-box" style="border-color: #2ecc71; background: linear-gradient(135deg, #e8f8f5, #d5f4e6);">
+                        <h3 style="color: #27ae60; font-size: 2em; margin-bottom: 1.5rem;">✅ ONE桌遊</h3>
+                        <div style="text-align: left; line-height: 2;">
+                            <div style="font-size: 1.2em; margin: 1rem 0;">🏢 現代化裝潢、無煙環境</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">🤖 AI 無人化（0 人力成本）</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">⏰ 24 小時營業（深夜也賺）</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0;">😎 年輕人主動上門</div>
+                            <div style="font-size: 1.2em; margin: 1rem 0; color: #2ecc71; font-weight: 900;">📈 月淨利 15-30 萬</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vs-badge" style="margin-top: -80px; position: relative; z-index: 100;">VS</div>
+            </section>
+
+            <!-- Slide 4: 進度條展示（為什麼報酬高） -->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">為什麼能月賺 17 萬？</h2>
+                
+                <div style="text-align: left; max-width: 1200px; margin: 0 auto;">
+                    <!-- 收入 -->
+                    <div style="margin: 2rem 0;">
+                        <div style="font-size: 1.8em; font-weight: 700; margin-bottom: 1rem; color: #2ecc71;">💹 收入來源</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%;">包廂租賃 90%</div>
+                        </div>
+                        <div style="margin-top: 0.5rem; color: #666;">月收入：20-50 萬（24 小時營業）</div>
+                    </div>
+                    
+                    <!-- 人事成本 -->
+                    <div style="margin: 2rem 0;">
+                        <div style="font-size: 1.8em; font-weight: 700; margin-bottom: 1rem; color: #e74c3c;">💰 人事成本</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5%; background: linear-gradient(90deg, #2ecc71, #27ae60);">AI 無人化 0%</div>
+                        </div>
+                        <div style="margin-top: 0.5rem; color: #666;">傳統店需 10-15 萬/月，ONE桌遊 = 0 元</div>
+                    </div>
+                    
+                    <!-- 租金 -->
+                    <div style="margin: 2rem 0;">
+                        <div style="font-size: 1.8em; font-weight: 700; margin-bottom: 1rem; color: #ff6b35;">🏢 租金水電</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%;">4-10 萬/月</div>
+                        </div>
+                        <div style="margin-top: 0.5rem; color: #666;">系統費 1 萬 + 雜支 5,000</div>
+                    </div>
+                </div>
+                
+                <div class="price-tag" style="margin-top: 2rem; background: linear-gradient(135deg, #ff6b35, #f7931e);">
+                    🎯 淨利率 60-70%（一般餐廳僅 10-20%）
+                </div>
+            </section>
+
+            <!-- Slide 5: 實際案例見證 -->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">真實案例：台中王老闆</h2>
+                
+                <div class="glow-box" style="max-width: 900px; margin: 2rem auto; font-size: 1.3em;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div style="text-align: center; flex: 1;">
+                            <div class="icon-huge">👨‍💼</div>
+                            <div style="margin-top: 1rem; font-weight: 700;">王老闆（45 歲）</div>
+                            <div style="color: #666;">原本開餐廳</div>
+                        </div>
+                        <div style="font-size: 3em; color: #ff6b35;">→</div>
+                        <div style="text-align: center; flex: 1;">
+                            <div class="icon-huge">💰</div>
+                            <div style="margin-top: 1rem; font-weight: 700;">投資 220 萬</div>
+                            <div style="color: #666;">2024/1 開店</div>
+                        </div>
+                        <div style="font-size: 3em; color: #2ecc71;">→</div>
+                        <div style="text-align: center; flex: 1;">
+                            <div class="icon-huge">🎉</div>
+                            <div style="margin-top: 1rem; font-weight: 700; color: #2ecc71;">10 個月回本</div>
+                            <div style="color: #666;">現月賺 18-22 萬</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; background: #fffbf0; padding: 2rem; border-radius: 20px; border-left: 6px solid #ff6b35;">
+                    <div style="font-size: 1.8em; color: #333; line-height: 1.8;">
+                        💬 「<strong>開餐廳每天累死累活，還要管人、管菜、管客人</strong>。<br>
+                        現在用手機就能監控店面，一個月去店裡 2-3 次就好。<br>
+                        <strong style="color: #2ecc71;">真的是躺著賺！</strong>」
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: 投資回報計算機 -->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">投資回報計算機</h2>
+                
+                <div class="grid-2" style="max-width: 1200px; margin: 0 auto;">
+                    <div class="stat-card">
+                        <div style="font-size: 1.5em; margin-bottom: 1rem;">💵 初期投資</div>
+                        <div class="number">200</div>
+                        <div style="font-size: 1.5em;">萬元</div>
+                        <div style="margin-top: 1.5rem; font-size: 1.1em; opacity: 0.9;">
+                            加盟 40 萬 + 裝潢 100 萬<br>
+                            + 設備 40 萬 + 週轉金 20 萬
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                        <div style="font-size: 1.5em; margin-bottom: 1rem;">💰 月淨利</div>
+                        <div class="number">17</div>
+                        <div style="font-size: 1.5em;">萬元</div>
+                        <div style="margin-top: 1.5rem; font-size: 1.1em; opacity: 0.9;">
+                            月收 25 萬 - 支出 8 萬<br>
+                            = 淨利 17 萬/月
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; font-size: 2.5em; font-weight: 900;">
+                    200 萬 ÷ 17 萬/月 = <span class="neon-text" style="font-size: 1.5em; display: inline-block; margin: 0 0.5rem;">12 個月</span>
+                </div>
+                
+                <div class="price-tag" style="margin-top: 2rem; font-size: 2.5em;">
+                    🚀 第 13 個月開始，每月淨賺 17 萬
+                </div>
+                
+                <div style="margin-top: 2rem; font-size: 1.3em; color: #666;">
+                    第一年回本 · 第二年淨賺 200 萬 · 第三年淨賺 200 萬...
+                </div>
+            </section>
+
+            <!-- Slide 7: 法規（綠色認證感）-->
+            <section>
+                <h2 style="font-size: 3em; color: #2ecc71; margin-bottom: 2rem;">✅ 100% 合法經營</h2>
+                
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glow-box" style="border-color: #2ecc71; text-align: center;">
+                        <div class="icon-huge" style="color: #2ecc71;">📋</div>
+                        <h4 style="font-size: 1.8em; color: #27ae60; margin: 1rem 0;">合法登記</h4>
+                        <div style="font-size: 1.1em; color: #333; line-height: 1.8;">
+                            商業登記證<br>
+                            稅籍登記<br>
+                            開立發票
+                        </div>
+                    </div>
+                    
+                    <div class="glow-box" style="border-color: #2ecc71; text-align: center;">
+                        <div class="icon-huge" style="color: #2ecc71;">🚫</div>
+                        <h4 style="font-size: 1.8em; color: #27ae60; margin: 1rem 0;">禁止賭博</h4>
+                        <div style="font-size: 1.1em; color: #333; line-height: 1.8;">
+                            場地租賃服務<br>
+                            明確告示<br>
+                            AI 監控系統
+                        </div>
+                    </div>
+                    
+                    <div class="glow-box" style="border-color: #2ecc71; text-align: center;">
+                        <div class="icon-huge" style="color: #2ecc71;">🛡️</div>
+                        <h4 style="font-size: 1.8em; color: #27ae60; margin: 1rem 0;">律師團隊</h4>
+                        <div style="font-size: 1.1em; color: #333; line-height: 1.8;">
+                            專業法律顧問<br>
+                            法規更新<br>
+                            協助處理
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; background: linear-gradient(135deg, #e8f8f5, #d5f4e6); padding: 2rem; border-radius: 20px; border: 3px solid #2ecc71;">
+                    <div style="font-size: 2em; font-weight: 900; color: #27ae60;">
+                        ✅ 105 家店全部合法經營<br>
+                        ✅ 政府輔導認可<br>
+                        ✅ 銀行貸款核准
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: 時間軸（成功證明）-->
+            <section>
+                <h2 style="font-size: 3em; color: #ff6b35; margin-bottom: 2rem;">3 年爆發式成長</h2>
+                
+                <div style="max-width: 1000px; margin: 0 auto;">
+                    <div class="timeline">
+                        <div class="grid-3">
+                            <div style="text-align: center; position: relative;">
+                                <div style="background: #fff5f0; padding: 2rem; border-radius: 20px; border: 3px solid #ff6b35;">
+                                    <div style="font-size: 3em; font-weight: 900; color: #ff6b35;">2023/7</div>
+                                    <div style="font-size: 2.5em; font-weight: 900; margin: 1rem 0;">1 家</div>
+                                    <div style="font-size: 1.2em; color: #666;">第一家店試營運</div>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; position: relative;">
+                                <div style="background: #fff5f0; padding: 2rem; border-radius: 20px; border: 3px solid #f7931e;">
+                                    <div style="font-size: 3em; font-weight: 900; color: #f7931e;">2024</div>
+                                    <div style="font-size: 2.5em; font-weight: 900; margin: 1rem 0;">50 家</div>
+                                    <div style="font-size: 1.2em; color: #666;">快速展店擴張</div>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; position: relative;">
+                                <div style="background: linear-gradient(135deg, #2ecc71, #27ae60); padding: 2rem; border-radius: 20px; color: white;">
+                                    <div style="font-size: 3em; font-weight: 900;">2025</div>
+                                    <div style="font-size: 2.5em; font-weight: 900; margin: 1rem 0;">105 家</div>
+                                    <div style="font-size: 1.2em;">全台最大品牌</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price-tag" style="margin-top: 3rem;">
+                    📈 年成長率 200%+
+                </div>
+                
+                <div style="margin-top: 2rem; font-size: 1.5em; color: #666;">
+                    2025/11 導入 AI 技術，加盟主營運更輕鬆
+                </div>
+            </section>
+
+            <!-- Slide 9: 行動呼籲 -->
+            <section data-background="linear-gradient(135deg, #ff6b35, #f7931e)">
+                <div style="color: white;">
+                    <div class="explosive-title" style="color: white; font-size: 4em;">立即加入</div>
+                    <div style="font-size: 2.5em; margin: 2rem 0; font-weight: 700;">
+                        月賺 17 萬的機會，你還在等什麼？
+                    </div>
+                    
+                    <div class="grid-3" style="margin: 3rem 0;">
+                        <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 3em; margin-bottom: 1rem;">⏱️</div>
+                            <div style="font-size: 1.8em; font-weight: 700;">45-60 天</div>
+                            <div style="font-size: 1.2em; margin-top: 0.5rem;">快速開店</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 3em; margin-bottom: 1rem;">💰</div>
+                            <div style="font-size: 1.8em; font-weight: 700;">12-18 月</div>
+                            <div style="font-size: 1.2em; margin-top: 0.5rem;">投資回本</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 3em; margin-bottom: 1rem;">🎯</div>
+                            <div style="font-size: 1.8em; font-weight: 700;">17 萬/月</div>
+                            <div style="font-size: 1.2em; margin-top: 0.5rem;">穩定收入</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; color: #ff6b35; padding: 2rem 4rem; border-radius: 50px; display: inline-block; font-size: 2em; font-weight: 900; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-top: 2rem;">
+                        📞 立即諮詢：待提供
+                    </div>
+                    
+                    <div style="margin-top: 2rem; font-size: 1.5em; opacity: 0.9;">
+                        🌐 https://ken0900101318-beep.github.io/touchmo-website/
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            backgroundTransition: 'zoom',
+            controls: true,
+            progress: true,
+            center: true,
+            slideNumber: true,
+            width: 1920,
+            height: 1080,
+        });
+    </script>
+</body>
+</html>
