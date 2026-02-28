@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌故事 | 遊戲家資訊科技有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00f5ff;
+            --secondary: #0affef;
+            --accent: #ff006e;
+            --dark: #0a0e27;
+            --darker: #050817;
+            --light: #1a1f3a;
+            --glow: rgba(0, 245, 255, 0.5);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background: var(--dark);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 30px var(--glow);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--dark);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .timeline-year {
+            font-size: 1.5em;
+            color: var(--accent);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: rgba(26, 31, 58, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px var(--glow);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(26, 31, 58, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .value-card h3 {
+            color: var(--primary);
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-size: 8em;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .quote-text {
+            font-size: 1.5em;
+            color: var(--secondary);
+            line-height: 2;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .quote-author {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .culture-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .culture-item {
+            background: rgba(26, 31, 58, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            text-align: center;
+        }
+
+        .culture-emoji {
+            font-size: 3em;
+            margin-bottom: 1rem;
+        }
+
+        .culture-title {
+            color: var(--primary);
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 110, 0.1));
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 900;
+            box-shadow: 0 10px 40px var(--glow);
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px var(--glow);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>品牌故事</h1>
+            <p>從一個創業夢想，到 105 家店的 AI 驅動帝國</p>
+        </div>
+    </div>
+
+    <!-- 創業起點 -->
+    <section>
+        <h2 class="section-title">🎯 創業的起點</h2>
+        <div class="timeline-content" style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.2em; line-height: 2;">
+                2023 年，一個大膽的想法誕生了。<br><br>
+                在這個充滿機會的時代，我們看到了傳統娛樂產業的痛點：高昂的人力成本、繁瑣的管理流程、難以標準化的服務品質。同時，我們也看到了 AI 技術帶來的無限可能。<br><br>
+                <strong style="color: var(--primary); font-size: 1.3em;">我們決定做一件事：用科技重新定義娛樂產業。</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- 成長歷程 -->
+    <section>
+        <h2 class="section-title">🚀 從 0 到 105 的奇蹟</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2023 年</div>
+                <div class="timeline-content">
+                    <h3>第一家店開幕</h3>
+                    <p>驗證「無人化自助麻將館」的概念。手機預約、智慧門鎖、AI 客服，一切從這裡開始。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024 年</div>
+                <div class="timeline-content">
+                    <h3>突破 30 家店</h3>
+                    <p>系統標準化、流程模組化。每一家新店都是前一家店經驗的累積。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025 年</div>
+                <div class="timeline-content">
+                    <h3>衝破 70 家店</h3>
+                    <p>開始投入 AI 技術深度應用。AI 客服、智能選址、倉儲管理系統陸續上線。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026 年</div>
+                <div class="timeline-content">
+                    <h3>達成 105 家店</h3>
+                    <p>成為全台最大自助麻將館品牌。AI 系統商品化，開始服務其他連鎖品牌。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 數據亮點 -->
+    <section>
+        <h2 class="section-title">📊 數據說話</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">105+</span>
+                <span class="stat-label">營運店家</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">3年</span>
+                <span class="stat-label">創業歷程</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">AI 智能系統</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">35家/年</span>
+                <span class="stat-label">平均展店速度</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">AI 驅動營運</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">AI 客服在線</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心價值觀 -->
+    <section>
+        <h2 class="section-title">🌟 核心價值觀</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>1️⃣ 實戰為王</h3>
+                <p>所有系統都是從實際需求出發，經過 105 家店驗證。我們不做花俏的功能，只做真正有用的。</p>
+            </div>
+            <div class="value-card">
+                <h3>2️⃣ 科技驅動</h3>
+                <p>堅信 AI 技術能改變傳統產業。不是為了科技而科技，而是用科技解決真實問題。</p>
+            </div>
+            <div class="value-card">
+                <h3>3️⃣ 持續進化</h3>
+                <p>三年從 0 到 105 家，我們習慣快速迭代、持續優化。今天的成功，不代表明天可以停下腳步。</p>
+            </div>
+            <div class="value-card">
+                <h3>4️⃣ 共好共贏</h3>
+                <p>不只自己成功，更要幫助客戶成功。把我們的經驗和技術，分享給更多創業者。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 創辦人的話 -->
+    <section>
+        <div class="quote-section">
+            <p class="quote-text">
+                三年前，我們只是一群相信 AI 能改變世界的年輕人。<br>
+                今天，我們用 105 家店證明了，AI 不只是概念，而是真實的競爭力。<br>
+                未來，我們要把這個經驗分享給更多人，讓更多中小企業也能享受 AI 的力量。<br><br>
+                如果你也相信科技的力量，如果你也想改變產業，歡迎加入我們。<br>
+                這裡不只是一份工作，而是一場改變世界的冒險。
+            </p>
+            <p class="quote-author">— 遊戲家資訊科技創辦人</p>
+        </div>
+    </section>
+
+    <!-- 公司文化 -->
+    <section>
+        <h2 class="section-title">🌈 我們的文化</h2>
+        <div class="culture-list">
+            <div class="culture-item">
+                <div class="culture-emoji">🎯</div>
+                <div class="culture-title">扁平化管理</div>
+                <p>沒有繁瑣的層級，有想法就提出來</p>
+            </div>
+            <div class="culture-item">
+                <div class="culture-emoji">⚡</div>
+                <div class="culture-title">快速迭代</div>
+                <p>今天的想法，明天就能實現</p>
+            </div>
+            <div class="culture-item">
+                <div class="culture-emoji">📊</div>
+                <div class="culture-title">數據驅動</div>
+                <p>用數據說話，不靠感覺決策</p>
+            </div>
+            <div class="culture-item">
+                <div class="culture-emoji">🚀</div>
+                <div class="culture-title">鼓勵試錯</div>
+                <p>失敗不可怕，不嘗試才可怕</p>
+            </div>
+            <div class="culture-item">
+                <div class="culture-emoji">💡</div>
+                <div class="culture-title">知識分享</div>
+                <p>每個人的成長，就是公司的成長</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="section-title">準備好加入我們了嗎？</h2>
+        <p style="font-size: 1.3em; margin: 2rem 0; color: var(--secondary);">
+            如果你看完這個故事，覺得熱血沸騰，那我們就是在找你！
+        </p>
+        <a href="#contact" class="cta-button">立即加入團隊 🚀</a>
+    </section>
+</body>
+</html>
