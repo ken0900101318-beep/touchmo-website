@@ -99,7 +99,9 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+            background: 
+                linear-gradient(135deg, rgba(10, 14, 39, 0.85) 0%, rgba(26, 31, 58, 0.75) 50%, rgba(10, 14, 39, 0.85) 100%),
+                url('images/room-industrial.jpg') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -800,6 +802,49 @@
                 ">
                     📖 了解完整品牌故事
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 環境展示 -->
+    <section style="background: var(--dark); padding: 8rem 2rem;">
+        <div class="container">
+            <h2 class="section-title">🏠 店面環境</h2>
+            <p class="section-subtitle" style="font-size: 1.3em; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;">精心設計的舒適空間<br>讓您享受最佳的休閒時光</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3rem;">
+                <!-- 豪華包廂 -->
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;" 
+                     onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
+                     onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
+                    <img src="images/room-luxury.jpg" alt="豪華包廂" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                        <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">🎯 豪華包廂</h3>
+                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">寬敞舒適的VIP包廂，配備麻將桌、沙發床、電視與豐富桌遊，適合4-8人聚會</p>
+                    </div>
+                </div>
+
+                <!-- 工業風包廂 -->
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
+                     onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
+                    <img src="images/room-industrial.jpg" alt="工業風包廂" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                        <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">⚡ 工業風包廂</h3>
+                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">時尚工業風設計，麻將桌、大螢幕電視、高級沙發椅，打造現代化娛樂空間</p>
+                    </div>
+                </div>
+
+                <!-- 粉色主題走廊 -->
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
+                     onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
+                    <img src="images/hallway-pink.jpg" alt="粉色主題樓層" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                        <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">💕 主題樓層</h3>
+                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">獨特的粉色主題樓層，愛心門窗設計，打卡熱點，營造溫馨浪漫氛圍</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
