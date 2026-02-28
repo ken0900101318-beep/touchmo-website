@@ -1,0 +1,42 @@
+            <div class="timeline-item">
+                <div class="timeline-year">2023年7月</div>
+                <div class="timeline-content">
+                    <h3>第一家店開幕</h3>
+                    <p>從軟體到硬體一條龍開發。手機APP預約、繳費機付款、智能門鎖、藍芽音響。驗證「無人化」概念成功。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2023年底</div>
+                <div class="timeline-content">
+                    <h3>達成 6 家店</h3>
+                    <p>快速複製無人化模式。平均不到一個月開一家新店。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024年</div>
+                <div class="timeline-content">
+                    <h3>突破 50 家店</h3>
+                    <p>進入爆發期。系統標準化、流程模組化。平均每月開 3-4 家新店。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025年</div>
+                <div class="timeline-content">
+                    <h3>突破 100 家 + 會員 10 萬人</h3>
+                    <p>成為全台最大自助麻將館。正式引入 AI 技術。開出副品牌「智摸科技」。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025年11月</div>
+                <div class="timeline-content">
+                    <h3>AI 技術全面導入</h3>
+                    <p>AI 客服、智能選址、倉儲管理、打卡系統、行銷設計。結合自動化軟硬體，創造更多服務。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026年</div>
+                <div class="timeline-content">
+                    <h3>105 家店，持續成長中</h3>
+                    <p>AI 系統商品化，服務更多連鎖品牌。跨產業應用持續發展。</p>
+                </div>
+            </div>
