@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE桌遊 | 全台最大自助麻將館連鎖品牌 | AI智慧運營 105家店</title>
-    <meta name="description" content="ONE桌遊－全台最大自助麻將館連鎖品牌，105家門市遍布全台，24小時無人化經營。AI智慧運營系統、手機自助預約、智能門禁，重新定義現代麻將休閒體驗。由遊戲家資訊科技打造的創新品牌。">
+    <title>ONE桌遊 | 全台最大自助桌遊連鎖品牌 | AI智慧運營 105家店</title>
+    <meta name="description" content="ONE桌遊－全台最大自助桌遊連鎖品牌，105家門市遍布全台，24小時無人化經營。AI智慧運營系統、手機自助預約、智能門禁，重新定義現代桌遊休閒體驗。由遊戲家資訊科技打造的創新品牌。">
     <style>
         * {
             margin: 0;
@@ -265,28 +265,29 @@
 
         /* Section 通用樣式 */
         section {
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             position: relative;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.8em;
+            font-size: 3em;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--primary);
-            text-shadow: 0 0 30px var(--glow);
+            text-shadow: 0 0 35px var(--glow);
+            letter-spacing: 1px;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2em;
-            color: #a0a0a0;
+            font-size: 1.25em;
+            color: #b0b0b0;
             margin-bottom: 4rem;
             max-width: 700px;
             margin-left: auto;
@@ -305,28 +306,30 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            padding: 0 1rem;
         }
 
         .stat {
             text-align: center;
-            padding: 2rem;
-            background: rgba(26, 31, 58, 0.5);
-            border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            transition: all 0.3s;
+            padding: 2.5rem 1.5rem;
+            background: rgba(26, 31, 58, 0.4);
+            border-radius: 25px;
+            border: 1px solid rgba(0, 245, 255, 0.15);
+            transition: all 0.4s ease;
         }
 
         .stat:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--primary);
-            box-shadow: 0 10px 40px var(--glow);
+            box-shadow: 0 15px 50px var(--glow);
+            background: rgba(26, 31, 58, 0.6);
         }
 
         .stat-number {
-            font-size: 3.5em;
+            font-size: 3.2em;
             font-weight: 900;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -344,16 +347,17 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            padding: 0 1rem;
         }
 
         .about-card {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            transition: all 0.3s;
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.5), rgba(10, 14, 39, 0.5));
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 245, 255, 0.15);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -375,22 +379,29 @@
         }
 
         .about-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.3);
+            box-shadow: 0 25px 70px rgba(0, 245, 255, 0.4);
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.7), rgba(10, 14, 39, 0.7));
         }
 
         .about-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 1rem;
+            font-size: 1.7em;
+            margin-bottom: 1.8rem;
             color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
         .about-card p {
-            color: #c0c0c0;
-            font-size: 1.05em;
-            line-height: 2;
-            letter-spacing: 0.5px;
+            color: #d0d0d0;
+            font-size: 1.08em;
+            line-height: 2.1;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+        
+        .about-card p:last-child {
+            margin-bottom: 0;
         }
 
         /* 業務服務 */
@@ -708,12 +719,12 @@
             <div style="font-size: 0.9em; opacity: 0.7; margin-bottom: 1rem; letter-spacing: 2px;">
                 遊戲家資訊科技 出品
             </div>
-            <h1 style="font-size: 4.5em; margin-bottom: 1rem;">ONE桌遊</h1>
-            <p style="font-size: 1.6em; margin-bottom: 2rem;">🎮 全台最大自助麻將館連鎖品牌</p>
-            <p class="hero-subtitle">
-                🤖 AI 智慧運營 · 105 家門市遍布全台<br>
-                ⚡ 24 小時無人化經營 · 10 萬會員信賴<br>
-                🌟 重新定義現代麻將休閒體驗
+            <h1 style="font-size: 4.5em; margin-bottom: 1.5rem;">ONE桌遊</h1>
+            <p style="font-size: 1.8em; margin-bottom: 2.5rem; line-height: 1.5;">🎮 全台最大自助桌遊連鎖品牌</p>
+            <p class="hero-subtitle" style="font-size: 1.3em; line-height: 2; opacity: 0.9;">
+                🤖 AI 智慧運營 · 105 家門市<br>
+                ⚡ 24 小時無人化 · 10 萬會員<br>
+                🌟 重新定義桌遊休閒體驗
             </p>
             <div class="cta-buttons">
                 <a href="#services" class="btn btn-primary">了解加盟</a>
@@ -726,7 +737,7 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">⚡ 關於 ONE桌遊</h2>
-            <p class="section-subtitle">全台最大自助麻將館連鎖品牌，用 AI 科技重新定義麻將休閒體驗</p>
+            <p class="section-subtitle" style="font-size: 1.3em; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;">全台最大自助桌遊連鎖品牌<br>用 AI 科技重新定義休閒體驗</p>
 
             <div class="stats">
                 <div class="stat">
@@ -748,17 +759,22 @@
             </div>
 
             <div class="about-grid">
-                <div class="about-card">
-                    <h3>🎯 品牌定位</h3>
-                    <p>ONE桌遊成立於 2023 年，短短 3 年內快速展店至 105 家，成為全台最大自助麻將館連鎖品牌。我們運用 AI 智慧運營技術，打造 24 小時無人化自助空間，為 10 萬會員提供現代化的麻將休閒體驗。</p>
+                <div class="about-card" style="padding: 2.5rem; line-height: 1.9;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 1.5rem; color: var(--primary);">🎯 品牌故事</h3>
+                    <p style="font-size: 1.1em; opacity: 0.95;">ONE桌遊成立於 2023 年，短短 3 年內快速展店至 <strong style="color: var(--secondary);">105 家</strong>，成為全台最大自助桌遊連鎖品牌。</p>
+                    <p style="font-size: 1.05em; margin-top: 1.2rem; opacity: 0.85;">運用 AI 智慧運營技術，打造 24 小時無人化自助空間，為 <strong style="color: var(--secondary);">10 萬會員</strong> 提供現代化的休閒體驗。</p>
                 </div>
-                <div class="about-card">
-                    <h3>💡 創新模式</h3>
-                    <p>全台首創「手機自助預約 × AI 智慧運營」模式。不需排隊、不需櫃檯，從預約、進場、使用到付款，全程自助完成。透過 AI 技術降低營運成本，將優惠回饋給消費者，讓打麻將變得更便利、更實惠。</p>
+                <div class="about-card" style="padding: 2.5rem; line-height: 1.9;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 1.5rem; color: var(--primary);">💡 創新模式</h3>
+                    <p style="font-size: 1.1em; opacity: 0.95;">全台首創「<strong style="color: var(--secondary);">手機自助預約 × AI 智慧運營</strong>」模式</p>
+                    <p style="font-size: 1.05em; margin-top: 1.2rem; opacity: 0.85;">不需排隊、不需櫃檯<br>從預約到付款，全程自助完成</p>
+                    <p style="font-size: 1.05em; margin-top: 1.2rem; opacity: 0.85;">透過 AI 降低成本，將優惠回饋消費者</p>
                 </div>
-                <div class="about-card">
-                    <h3>🌟 品牌願景</h3>
-                    <p>麻將作為深植人心的國粹，卻往往受限於傳統社會的刻板印象。我們致力於透過 AI 智慧運營技術，打造 24 小時無人化自助空間，徹底翻轉產業格局。我們的初衷，是以創新科技重新定義服務體驗，引領大眾對麻將休閒擁有更健康、現代且專業的全新視角，讓這項傳統運動與智慧生活完美對接。</p>
+                <div class="about-card" style="padding: 2.5rem; line-height: 1.9;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 1.5rem; color: var(--primary);">🌟 品牌願景</h3>
+                    <p style="font-size: 1.1em; opacity: 0.95;">用 <strong style="color: var(--secondary);">AI 智慧運營</strong> 打造 24 小時無人化自助空間</p>
+                    <p style="font-size: 1.05em; margin-top: 1.2rem; opacity: 0.85;">以創新科技重新定義服務體驗</p>
+                    <p style="font-size: 1.05em; margin-top: 1.2rem; opacity: 0.85;">讓傳統休閒與智慧生活完美對接</p>
                 </div>
             </div>
             
