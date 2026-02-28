@@ -350,6 +350,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 3rem;
             padding: 0 1rem;
+            align-items: stretch;
         }
 
         .about-card {
@@ -360,6 +361,9 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .about-card::before {
@@ -413,6 +417,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
+            align-items: stretch;
         }
 
         .service-card {
@@ -422,6 +427,9 @@
             border: 1px solid rgba(0, 245, 255, 0.2);
             transition: all 0.3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card::after {
@@ -470,6 +478,7 @@
         .service-card ul {
             list-style: none;
             color: #a0a0a0;
+            flex-grow: 1;
         }
 
         .service-card ul li {
@@ -807,7 +816,7 @@
                 <div class="service-card" style="border: 2px solid var(--primary); box-shadow: 0 10px 50px var(--glow);">
                     <div class="service-icon">🎮</div>
                     <h3 style="color: var(--primary); font-size: 1.8em;">ONE桌遊 加盟方案</h3>
-                    <p style="font-size: 1.1em; margin-bottom: 1.5rem;">全台最大自助麻將館連鎖品牌，3 年展店至 105 家。完整的加盟輔導系統，從選址到開幕一條龍服務。</p>
+                    <p style="font-size: 1.1em; margin-bottom: 1.5rem;">全台最大自助桌遊連鎖品牌，3 年展店至 105 家。完整的加盟輔導系統，從選址到開幕一條龍服務。</p>
                     <ul style="font-size: 1.05em;">
                         <li>✅ AI 智能選址服務（數據分析最佳地點）</li>
                         <li>✅ 裝潢設計規劃（30-45 天快速開店）</li>
