@@ -57,7 +57,7 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .hero h1 {
@@ -74,6 +74,7 @@
             font-size: 1.5em;
             color: var(--secondary);
             margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         section {
@@ -90,6 +91,48 @@
             text-shadow: 0 0 30px var(--glow);
         }
 
+        .intro-box {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .intro-box p {
+            font-size: 1.2em;
+            line-height: 2.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-box strong {
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .tech-list li {
+            background: rgba(0, 245, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+            font-size: 1.1em;
+        }
+
         .timeline {
             position: relative;
             padding-left: 3rem;
@@ -101,13 +144,13 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
+            width: 4px;
             background: linear-gradient(180deg, var(--primary), var(--accent));
             box-shadow: 0 0 20px var(--glow);
         }
 
         .timeline-item {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             padding-left: 2rem;
             position: relative;
         }
@@ -115,34 +158,47 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -3.5rem;
-            top: 0.5rem;
-            width: 20px;
-            height: 20px;
+            left: -3.7rem;
+            top: 0.3rem;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             background: var(--primary);
-            border: 3px solid var(--dark);
+            border: 4px solid var(--dark);
             box-shadow: 0 0 20px var(--glow);
         }
 
         .timeline-year {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: var(--accent);
             font-weight: 900;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
         }
 
         .timeline-content {
             background: rgba(26, 31, 58, 0.5);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
             border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
         }
 
         .timeline-content h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.3em;
+            font-size: 1.5em;
+        }
+
+        .timeline-content p {
+            font-size: 1.1em;
+            line-height: 2;
         }
 
         .stats-grid {
@@ -154,7 +210,7 @@
 
         .stat-card {
             background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 20px;
             border: 1px solid rgba(0, 245, 255, 0.2);
             text-align: center;
@@ -168,7 +224,7 @@
         }
 
         .stat-number {
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 900;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -181,32 +237,51 @@
         .stat-label {
             color: #a0a0a0;
             font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .stat-desc {
+            color: #808080;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
         }
 
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin: 3rem 0;
         }
 
         .value-card {
             background: rgba(26, 31, 58, 0.5);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
             border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
         }
 
         .value-card h3 {
             color: var(--primary);
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            font-size: 1.1em;
+            line-height: 2;
         }
 
         .quote-section {
             background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
             padding: 4rem 3rem;
             border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.3);
+            border: 2px solid rgba(0, 245, 255, 0.3);
             text-align: center;
             margin: 4rem 0;
             position: relative;
@@ -214,77 +289,40 @@
 
         .quote-section::before {
             content: '"';
-            font-size: 8em;
+            font-size: 10em;
             color: var(--primary);
-            opacity: 0.2;
+            opacity: 0.15;
             position: absolute;
             top: -20px;
-            left: 20px;
+            left: 30px;
+            font-family: Georgia, serif;
         }
 
         .quote-text {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: var(--secondary);
-            line-height: 2;
+            line-height: 2.2;
             margin-bottom: 2rem;
             font-style: italic;
+            position: relative;
+            z-index: 1;
         }
 
         .quote-author {
             color: var(--primary);
             font-weight: 700;
-            font-size: 1.2em;
-        }
-
-        .culture-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .culture-item {
-            background: rgba(26, 31, 58, 0.5);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            text-align: center;
-        }
-
-        .culture-emoji {
-            font-size: 3em;
-            margin-bottom: 1rem;
-        }
-
-        .culture-title {
-            color: var(--primary);
             font-size: 1.3em;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
         }
 
-        .cta-section {
-            text-align: center;
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 110, 0.1));
-        }
-
-        .cta-button {
+        .milestone-badge {
             display: inline-block;
-            padding: 1.5rem 3rem;
-            background: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3em;
-            font-weight: 900;
-            box-shadow: 0 10px 40px var(--glow);
-            transition: all 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px var(--glow);
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 0, 110, 0.2);
+            color: var(--accent);
+            border-radius: 20px;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            border: 1px solid var(--accent);
         }
 
         @media (max-width: 768px) {
@@ -294,6 +332,12 @@
             .section-title {
                 font-size: 2em;
             }
+            .timeline {
+                padding-left: 2rem;
+            }
+            .timeline-item::before {
+                left: -2.5rem;
+            }
         }
     </style>
 </head>
@@ -302,84 +346,171 @@
     <div class="hero">
         <div class="hero-content">
             <h1>品牌故事</h1>
-            <p>從一個創業夢想，到 105 家店的 AI 驅動帝國</p>
+            <p>從看見人力成本痛點<br>到打造 AI 驅動的無人化帝國</p>
+            <div style="margin-top: 2rem; font-size: 1.2em; color: rgba(255,255,255,0.7);">
+                📱 一條龍開發 | 🤖 AI 驅動 | 🎮 105 家店 | 👥 10 萬會員
+            </div>
         </div>
     </div>
 
     <!-- 創業起點 -->
     <section>
-        <h2 class="section-title">🎯 創業的起點</h2>
-        <div class="timeline-content" style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 1.2em; line-height: 2;">
-                2023 年，一個大膽的想法誕生了。<br><br>
-                在這個充滿機會的時代，我們看到了傳統娛樂產業的痛點：高昂的人力成本、繁瑣的管理流程、難以標準化的服務品質。同時，我們也看到了 AI 技術帶來的無限可能。<br><br>
-                <strong style="color: var(--primary); font-size: 1.3em;">我們決定做一件事：用科技重新定義娛樂產業。</strong>
+        <h2 class="section-title">🎯 創業的起點：看見無人化商機</h2>
+        <div class="intro-box">
+            <p>
+                2023 年初，我們看到一個關鍵趨勢：<strong class="highlight">人力成本越來越高，但服務業的效率卻沒有跟著提升。</strong>
+            </p>
+            <p>
+                傳統麻將館需要大量人力：櫃檯人員、清潔人員、現場服務人員。一家店光是人力成本，每個月就要好幾萬甚至十幾萬。
+            </p>
+            <p style="margin-top: 2rem;">
+                我們決定賭一把：<strong>打造全台第一個真正「無人化」的自助麻將館。</strong>
+            </p>
+            <p style="margin-top: 2rem; color: var(--secondary); font-size: 1.3em;">
+                不只是無人化概念，而是<strong style="color: var(--primary);">從軟體到硬體一條龍開發</strong>：
+            </p>
+            <ul class="tech-list">
+                <li>📱 手機 APP 預約</li>
+                <li>💳 繳費機自動收款</li>
+                <li>🔊 喇叭播報系統</li>
+                <li>🎵 藍芽音響</li>
+                <li>🔐 智能門鎖</li>
+            </ul>
+            <p style="text-align: center; margin-top: 2rem; color: var(--primary); font-size: 1.3em;">
+                我們不是買現成的系統，而是<strong>從零開始，自己做</strong>。
             </p>
         </div>
     </section>
 
-    <!-- 成長歷程 -->
+    <!-- 成長時間軸 -->
     <section>
-        <h2 class="section-title">🚀 從 0 到 105 的奇蹟</h2>
+        <h2 class="section-title">🚀 三年奇蹟：從 0 到 105 的故事</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-year">2023 年</div>
+                <div class="timeline-year">2023年 7月</div>
                 <div class="timeline-content">
-                    <h3>第一家店開幕</h3>
-                    <p>驗證「無人化自助麻將館」的概念。手機預約、智慧門鎖、AI 客服，一切從這裡開始。</p>
+                    <h3>🎉 第一家店開幕</h3>
+                    <p>
+                        驗證「無人化自助麻將館」的概念。從軟體到硬體一條龍開發：手機APP預約、繳費機付款、喇叭播報、藍芽音響、智能門鎖。
+                    </p>
+                    <p style="margin-top: 1rem; color: var(--primary);">
+                        <strong>結果證明：我們對了。客人不但會用，還覺得很方便。</strong>
+                    </p>
                 </div>
             </div>
+
             <div class="timeline-item">
-                <div class="timeline-year">2024 年</div>
+                <div class="timeline-year">2023年 底</div>
                 <div class="timeline-content">
-                    <h3>突破 30 家店</h3>
-                    <p>系統標準化、流程模組化。每一家新店都是前一家店經驗的累積。</p>
+                    <h3>📈 達成 6 家店</h3>
+                    <p>
+                        第一家店成功後，立刻開始複製模式。因為所有系統都是自己開發的，可以快速複製：同一套APP、同一套硬體、同一套流程。
+                    </p>
+                    <span class="milestone-badge">平均不到一個月開一家店</span>
                 </div>
             </div>
+
             <div class="timeline-item">
-                <div class="timeline-year">2025 年</div>
+                <div class="timeline-year">2024年</div>
                 <div class="timeline-content">
-                    <h3>衝破 70 家店</h3>
-                    <p>開始投入 AI 技術深度應用。AI 客服、智能選址、倉儲管理系統陸續上線。</p>
+                    <h3>🚀 突破 50 家店</h3>
+                    <p>
+                        進入爆發期。透過標準化的系統和流程，快速評估新店面、快速完成裝修、快速上線營運。
+                    </p>
+                    <span class="milestone-badge">一年內從 6 家衝到 50 家</span>
+                    <span class="milestone-badge">平均每月開 3-4 家新店</span>
+                    <p style="margin-top: 1rem; color: var(--secondary);">
+                        這個速度，連我們自己都覺得不可思議。但這就是<strong>系統化的力量</strong>。
+                    </p>
                 </div>
             </div>
+
             <div class="timeline-item">
-                <div class="timeline-year">2026 年</div>
+                <div class="timeline-year">2025年</div>
                 <div class="timeline-content">
-                    <h3>達成 105 家店</h3>
-                    <p>成為全台最大自助麻將館品牌。AI 系統商品化，開始服務其他連鎖品牌。</p>
+                    <h3>🎊 突破 100 家店 + 會員 10 萬人</h3>
+                    <p>
+                        成為全台最大自助麻將館品牌。ONE桌遊會員人數正式突破 10 萬人。
+                    </p>
+                    <p style="margin-top: 1.5rem; color: var(--primary); font-size: 1.2em;">
+                        <strong>🏢 副品牌誕生：智摸科技（麻將自助系統）</strong>
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        在成功用系統管理 100+ 家店後，我們發現：其他連鎖品牌也有一樣的痛點！於是，我們把自己用的系統商品化，幫助更多品牌數位轉型。
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2025年 11月</div>
+                <div class="timeline-content">
+                    <h3>🤖 AI 技術全面導入</h3>
+                    <p>
+                        正式開始引用 AI 技術結合自動化軟硬體，創造更多服務：
+                    </p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 2;">
+                        <li>AI 客服系統（24/7 自動回覆，節省 80% 成本）</li>
+                        <li>AI 智能選址（數據驅動，降低選址失敗率）</li>
+                        <li>智能倉儲管理（100+ 家店物料自動追蹤）</li>
+                        <li>智能打卡系統（GPS 定位、自動計薪）</li>
+                        <li>AI 行銷設計（自動生成海報、貼文）</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; color: var(--accent);">
+                        <strong>這不是為了 AI 而 AI，而是用 AI 解決真實的營運痛點。</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2026年</div>
+                <div class="timeline-content">
+                    <h3>✨ 105 家店，持續寫故事中</h3>
+                    <p>
+                        現在是 2026 年，我們有 105 家店。但這不是終點，而是新的起點。
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        🎮 <strong>ONE桌遊</strong>：持續優化體驗、開發新服務<br>
+                        🤖 <strong>智摸科技</strong>：AI 系統服務更多連鎖品牌<br>
+                        💡 <strong>創新研發</strong>：探索 AI 新應用、跨產業複製
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 數據亮點 -->
-    <section>
+    <section style="background: rgba(10, 14, 39, 0.5);">
         <h2 class="section-title">📊 數據說話</h2>
         <div class="stats-grid">
             <div class="stat-card">
                 <span class="stat-number">105+</span>
                 <span class="stat-label">營運店家</span>
+                <span class="stat-desc">全台最大自助麻將館</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10萬</span>
+                <span class="stat-label">會員人數</span>
+                <span class="stat-desc">市場認可度</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">3年</span>
                 <span class="stat-label">創業歷程</span>
+                <span class="stat-desc">2023年7月開始</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">35家/年</span>
+                <span class="stat-label">展店速度</span>
+                <span class="stat-desc">系統化快速複製</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">5+</span>
                 <span class="stat-label">AI 智能系統</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">35家/年</span>
-                <span class="stat-label">平均展店速度</span>
+                <span class="stat-desc">實戰驗證解決方案</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">100%</span>
-                <span class="stat-label">AI 驅動營運</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">AI 客服在線</span>
+                <span class="stat-label">一條龍開發</span>
+                <span class="stat-desc">軟硬體完全掌控</span>
             </div>
         </div>
     </section>
@@ -394,7 +525,7 @@
             </div>
             <div class="value-card">
                 <h3>2️⃣ 科技驅動</h3>
-                <p>堅信 AI 技術能改變傳統產業。不是為了科技而科技，而是用科技解決真實問題。</p>
+                <p>堅信科技能改變傳統產業。用 AI 和自動化解決真實問題，降低成本、提升效率。</p>
             </div>
             <div class="value-card">
                 <h3>3️⃣ 持續進化</h3>
@@ -411,55 +542,41 @@
     <section>
         <div class="quote-section">
             <p class="quote-text">
-                三年前，我們只是一群相信 AI 能改變世界的年輕人。<br>
-                今天，我們用 105 家店證明了，AI 不只是概念，而是真實的競爭力。<br>
-                未來，我們要把這個經驗分享給更多人，讓更多中小企業也能享受 AI 的力量。<br><br>
+                2023 年 7 月，我們開了第一家店。<br>
+                那時候只是想做一件事：用科技降低人力成本。<br><br>
+                沒想到三年後，我們有 105 家店、10 萬名會員。<br>
+                更沒想到，我們不只做自己的生意，還幫助其他品牌數位轉型。<br><br>
+                這個旅程還沒結束。AI 技術還在進化，無人化市場還在成長。<br><br>
                 如果你也相信科技的力量，如果你也想改變產業，歡迎加入我們。<br>
-                這裡不只是一份工作，而是一場改變世界的冒險。
+                讓我們一起，用 AI 重新定義服務業。
             </p>
             <p class="quote-author">— 遊戲家資訊科技創辦人</p>
         </div>
     </section>
 
-    <!-- 公司文化 -->
-    <section>
-        <h2 class="section-title">🌈 我們的文化</h2>
-        <div class="culture-list">
-            <div class="culture-item">
-                <div class="culture-emoji">🎯</div>
-                <div class="culture-title">扁平化管理</div>
-                <p>沒有繁瑣的層級，有想法就提出來</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-emoji">⚡</div>
-                <div class="culture-title">快速迭代</div>
-                <p>今天的想法，明天就能實現</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-emoji">📊</div>
-                <div class="culture-title">數據驅動</div>
-                <p>用數據說話，不靠感覺決策</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-emoji">🚀</div>
-                <div class="culture-title">鼓勵試錯</div>
-                <p>失敗不可怕，不嘗試才可怕</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-emoji">💡</div>
-                <div class="culture-title">知識分享</div>
-                <p>每個人的成長，就是公司的成長</p>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA -->
-    <section class="cta-section">
+    <section style="text-align: center; padding: 4rem 2rem;">
         <h2 class="section-title">準備好加入我們了嗎？</h2>
-        <p style="font-size: 1.3em; margin: 2rem 0; color: var(--secondary);">
-            如果你看完這個故事，覺得熱血沸騰，那我們就是在找你！
+        <p style="font-size: 1.4em; margin: 2rem 0; color: var(--secondary); line-height: 2;">
+            如果你看完這個故事，覺得熱血沸騰<br>
+            那我們就是在找你！
         </p>
-        <a href="#contact" class="cta-button">立即加入團隊 🚀</a>
+        <div style="margin-top: 3rem;">
+            <a href="../index.html#contact" style="
+                display: inline-block;
+                padding: 1.5rem 3rem;
+                background: var(--primary);
+                color: var(--dark);
+                text-decoration: none;
+                border-radius: 50px;
+                font-size: 1.3em;
+                font-weight: 900;
+                box-shadow: 0 10px 40px var(--glow);
+                transition: all 0.3s;
+            ">
+                立即加入團隊 🚀
+            </a>
+        </div>
     </section>
 </body>
 </html>
