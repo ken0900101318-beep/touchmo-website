@@ -13,12 +13,12 @@
         }
 
         :root {
-            /* 鮮豔科技風配色 - Liteon 風格 */
-            --gradient-start: #00BCD4;
-            --gradient-end: #0097A7;
-            --primary: #00BCD4;
-            --secondary: #00ACC1;
-            --accent: #FF5722;
+            /* Tiffany 藍配色 - 優雅清新 */
+            --gradient-start: #5EEAD4;
+            --gradient-end: #2DD4BF;
+            --primary: #5EEAD4;
+            --secondary: #2DD4BF;
+            --accent: #14B8A6;
             
             /* 背景 */
             --bg-main: #FFFFFF;
@@ -40,9 +40,9 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             
-            /* 光暈效果 - 青綠色 */
-            --glow-primary: rgba(0, 188, 212, 0.5);
-            --glow-secondary: rgba(0, 172, 193, 0.4);
+            /* 光暈效果 - Tiffany 藍 */
+            --glow-primary: rgba(94, 234, 212, 0.5);
+            --glow-secondary: rgba(45, 212, 191, 0.4);
         }
         
         /* 漸層背景 */
@@ -317,7 +317,7 @@
             font-size: 3.5em;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            background: linear-gradient(135deg, #5EEAD4, #2DD4BF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -357,24 +357,24 @@
         .stat {
             text-align: center;
             padding: 3rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(45, 212, 191, 0.08));
             border-radius: 28px;
-            border: 3px solid rgba(0, 188, 212, 0.25);
+            border: 3px solid rgba(94, 234, 212, 0.25);
             transition: all 0.4s ease;
-            box-shadow: 0 4px 16px rgba(0, 188, 212, 0.15);
+            box-shadow: 0 4px 16px rgba(94, 234, 212, 0.15);
         }
 
         .stat:hover {
             transform: translateY(-12px) scale(1.05);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.4);
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.15), rgba(0, 151, 167, 0.15));
+            box-shadow: 0 20px 60px rgba(94, 234, 212, 0.4);
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), rgba(45, 212, 191, 0.15));
         }
 
         .stat-number {
             font-size: 4em;
             font-weight: 900;
-            color: #00BCD4;
+            color: #5EEAD4;
             display: block;
             letter-spacing: -2px;
         }
@@ -415,7 +415,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, #00BCD4, #0097A7);
+            background: linear-gradient(90deg, #5EEAD4, #2DD4BF);
             transform: scaleX(0);
             transition: transform 0.3s;
         }
@@ -427,7 +427,7 @@
         .about-card:hover {
             transform: translateY(-12px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
+            box-shadow: 0 20px 60px rgba(94, 234, 212, 0.3);
             background: var(--bg-card);
         }
 
@@ -495,8 +495,8 @@
 
         .service-card:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
-            border-color: #00BCD4;
+            box-shadow: 0 20px 60px rgba(94, 234, 212, 0.3);
+            border-color: #5EEAD4;
         }
 
         .service-icon {
@@ -508,7 +508,7 @@
         .service-card h3 {
             font-size: 2em;
             margin-bottom: 1rem;
-            color: #00BCD4;
+            color: #5EEAD4;
             font-weight: 800;
         }
 
@@ -556,12 +556,12 @@
 
         .product-card {
             background: var(--bg-card);
-            padding: 0;
+            padding: 2.5rem;
             border-radius: 24px;
             border: 2px solid var(--border-light);
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
@@ -571,9 +571,9 @@
         }
 
         .product-card:hover {
-            transform: translateY(-12px) scale(1.03);
+            transform: translateY(-12px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
+            box-shadow: 0 20px 60px var(--glow-primary);
         }
 
         .product-card h3 {
@@ -584,19 +584,22 @@
         }
 
         .product-card p {
-            color: #c0c0c0;
+            color: #424242;
             margin-bottom: 1rem;
             line-height: 1.9;
             letter-spacing: 0.3px;
-            font-size: 1.02em;
+            font-size: 1.05em;
+            font-weight: 500;
         }
 
         .product-tag {
             display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(0, 245, 255, 0.2);
+            padding: 0.5rem 1.2rem;
+            background: rgba(94, 234, 212, 0.15);
             color: var(--primary);
             border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
             font-size: 0.9em;
             font-weight: 600;
             margin-top: 1rem;
@@ -616,11 +619,11 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(45, 212, 191, 0.08));
             padding: 3rem;
             border-radius: 24px;
-            border: 3px solid rgba(0, 188, 212, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 188, 212, 0.15);
+            border: 3px solid rgba(94, 234, 212, 0.3);
+            box-shadow: 0 8px 32px rgba(94, 234, 212, 0.15);
         }
 
         .contact-info h3 {
@@ -635,14 +638,14 @@
             gap: 1.5rem;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            border-left: 4px solid #00BCD4;
-            background: rgba(0, 188, 212, 0.05);
+            border-left: 4px solid #5EEAD4;
+            background: rgba(94, 234, 212, 0.05);
             border-radius: 12px;
             transition: all 0.3s ease;
         }
         
         .contact-item:hover {
-            background: rgba(0, 188, 212, 0.1);
+            background: rgba(94, 234, 212, 0.1);
             transform: translateX(8px);
         }
 
@@ -655,7 +658,7 @@
         .contact-text h4 {
             font-size: 1.3em;
             margin-bottom: 0.5rem;
-            color: #00BCD4;
+            color: #5EEAD4;
             font-weight: 700;
         }
 
@@ -667,10 +670,10 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(45, 212, 191, 0.08));
             color: #212121;
             padding: 3rem 2rem 1.5rem;
-            border-top: 3px solid rgba(0, 188, 212, 0.3);
+            border-top: 3px solid rgba(94, 234, 212, 0.3);
         }
 
         .footer-content {
@@ -765,7 +768,7 @@
         }
 
         .feature-card:hover, .service-card:hover {
-            box-shadow: 0 16px 48px rgba(0, 188, 212, 0.3) !important;
+            box-shadow: 0 16px 48px rgba(94, 234, 212, 0.3) !important;
             transform: translateY(-12px) scale(1.03) !important;
             border-color: var(--primary) !important;
             border-width: 3px !important;
@@ -773,7 +776,7 @@
 
         /* 漸層標題 - 超大超粗 */
         .section-title {
-            background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%) !important;
+            background: linear-gradient(135deg, #5EEAD4 0%, #2DD4BF 100%) !important;
             -webkit-background-clip: text !important;
             -webkit-text-fill-color: transparent !important;
             background-clip: text !important;
@@ -782,9 +785,9 @@
             letter-spacing: -1px !important;
         }
 
-        /* Hero 區域漸層背景 - Liteon 青綠風格 */
+        /* Hero 區域漸層背景 - Tiffany 藍風格 */
         #hero {
-            background: linear-gradient(135deg, #00BCD4 0%, #0097A7 50%, #00838F 100%) !important;
+            background: linear-gradient(135deg, #5EEAD4 0%, #2DD4BF 50%, #14B8A6 100%) !important;
             position: relative !important;
             overflow: hidden !important;
         }
@@ -810,13 +813,13 @@
 
         /* 按鈕動畫 - 超鮮豔 */
         .cta-button {
-            background: linear-gradient(135deg, #00BCD4, #0097A7) !important;
+            background: linear-gradient(135deg, #5EEAD4, #2DD4BF) !important;
             color: white !important;
             padding: 18px 48px !important;
             border-radius: 16px !important;
             font-weight: 700 !important;
             font-size: 1.1em !important;
-            box-shadow: 0 12px 32px rgba(0, 188, 212, 0.5) !important;
+            box-shadow: 0 12px 32px rgba(94, 234, 212, 0.5) !important;
             transition: all 0.3s ease !important;
             position: relative !important;
             overflow: hidden !important;
@@ -840,17 +843,17 @@
         }
 
         .cta-button:hover {
-            box-shadow: 0 16px 48px rgba(0, 188, 212, 0.6) !important;
+            box-shadow: 0 16px 48px rgba(94, 234, 212, 0.6) !important;
             transform: translateY(-4px) scale(1.05) !important;
         }
 
         /* 統計數字 - 鮮豔漸層背景 */
         .stats-grid {
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.15), rgba(0, 151, 167, 0.15)) !important;
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), rgba(45, 212, 191, 0.15)) !important;
             border-radius: 28px !important;
             padding: 4rem !important;
-            border: 2px solid rgba(0, 188, 212, 0.3) !important;
-            box-shadow: 0 8px 32px rgba(0, 188, 212, 0.2) !important;
+            border: 2px solid rgba(94, 234, 212, 0.3) !important;
+            box-shadow: 0 8px 32px rgba(94, 234, 212, 0.2) !important;
         }
         
         /* 統計數字加粗 */
@@ -868,7 +871,7 @@
             <div class="logo">
                 <img src="one-logo.png" alt="ONE桌遊">
                 <div style="display: flex; flex-direction: column; gap: 0;">
-                    <span style="font-size: 1.3em; font-weight: 900; color: #00BCD4;">ONE桌遊</span>
+                    <span style="font-size: 1.3em; font-weight: 900; color: #5EEAD4;">ONE桌遊</span>
                     <span style="font-size: 0.5em; opacity: 0.8; font-weight: 400; letter-spacing: 0.5px; color: #424242;">by 遊戲家資訊科技</span>
                 </div>
             </div>
@@ -1020,7 +1023,7 @@
             <p class="section-subtitle">ONE桌遊品牌服務與技術支援</p>
 
             <div class="services-grid">
-                <div class="service-card" style="border: 3px solid #00BCD4; box-shadow: 0 12px 40px rgba(0, 188, 212, 0.3);">
+                <div class="service-card" style="border: 3px solid #5EEAD4; box-shadow: 0 12px 40px rgba(94, 234, 212, 0.3);">
                     <div class="service-icon">🎮</div>
                     <h3>ONE桌遊 加盟方案</h3>
                     <p style="font-size: 1.1em; margin-bottom: 1.5rem;">全台最大自助桌遊連鎖品牌，3 年展店至 105 家。完整的加盟輔導系統，從選址到開幕一條龍服務。</p>
@@ -1032,9 +1035,9 @@
                         <li>✅ 持續技術支援（24/7 線上客服）</li>
                         <li>✅ 品牌行銷資源（共享 10 萬會員流量）</li>
                     </ul>
-                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid rgba(0, 188, 212, 0.3);">
-                        <p style="color: #00BCD4; font-weight: 700; font-size: 1.1em;">💰 投資回報期：12-18 個月</p>
-                        <p style="color: #00BCD4; font-weight: 700; font-size: 1.1em;">📊 平均月營收：15-50 萬</p>
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid rgba(94, 234, 212, 0.3);">
+                        <p style="color: #5EEAD4; font-weight: 700; font-size: 1.1em;">💰 投資回報期：12-18 個月</p>
+                        <p style="color: #5EEAD4; font-weight: 700; font-size: 1.1em;">📊 平均月營收：15-50 萬</p>
                     </div>
                 </div>
 
