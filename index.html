@@ -327,9 +327,10 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.4em;
-            color: var(--text-secondary);
+            color: #212121;
             margin-bottom: 4rem;
-            font-weight: 500;
+            font-weight: 600;
+            opacity: 0.85;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -462,15 +463,16 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(249, 250, 251, 0.6));
+            background: var(--bg-card);
             padding: 3rem;
-            border-radius: 20px;
+            border-radius: 24px;
             border: 2px solid var(--border-light);
             transition: all 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
             height: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .service-card::after {
@@ -492,8 +494,9 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.4);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
+            border-color: #00BCD4;
         }
 
         .service-icon {
@@ -505,21 +508,24 @@
         .service-card h3 {
             font-size: 2em;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: #00BCD4;
+            font-weight: 800;
         }
 
         .service-card p {
-            color: #c0c0c0;
-            font-size: 1.05em;
+            color: #212121;
+            font-size: 1.1em;
             margin-bottom: 1.5rem;
             line-height: 1.9;
             letter-spacing: 0.3px;
+            font-weight: 500;
         }
 
         .service-card ul {
             list-style: none;
-            color: #a0a0a0;
+            color: #424242;
             flex-grow: 1;
+            font-weight: 500;
         }
 
         .service-card ul li {
@@ -610,10 +616,11 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(249, 250, 251, 0.8));
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
             padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid var(--border-light);
+            border-radius: 24px;
+            border: 3px solid rgba(0, 188, 212, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 188, 212, 0.15);
         }
 
         .contact-info h3 {
@@ -627,9 +634,16 @@
             align-items: start;
             gap: 1.5rem;
             margin-bottom: 2rem;
-            padding: 1rem;
-            border-left: 3px solid var(--primary);
-            background: rgba(0, 245, 255, 0.05);
+            padding: 1.5rem;
+            border-left: 4px solid #00BCD4;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(0, 188, 212, 0.1);
+            transform: translateX(8px);
         }
 
         .contact-icon {
@@ -639,21 +653,24 @@
         }
 
         .contact-text h4 {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 0.5rem;
-            color: var(--secondary);
+            color: #00BCD4;
+            font-weight: 700;
         }
 
         .contact-text p {
-            color: #c0c0c0;
+            color: #212121;
+            font-weight: 500;
+            font-size: 1.05em;
         }
 
         /* Footer */
         footer {
-            background: var(--bg-subtle);
-            color: white;
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
+            color: #212121;
             padding: 3rem 2rem 1.5rem;
-            border-top: 1px solid rgba(0, 245, 255, 0.2);
+            border-top: 3px solid rgba(0, 188, 212, 0.3);
         }
 
         .footer-content {
@@ -671,9 +688,10 @@
         }
 
         .footer-links a {
-            color: #a0a0a0;
+            color: #424242;
             text-decoration: none;
             transition: all 0.3s;
+            font-weight: 600;
         }
 
         .footer-links a:hover {
@@ -682,7 +700,8 @@
         }
 
         .copyright {
-            color: #808080;
+            color: #424242;
+            font-weight: 500;
             font-size: 0.9em;
             padding-top: 2rem;
             border-top: 1px solid rgba(0, 245, 255, 0.1);
@@ -849,8 +868,8 @@
             <div class="logo">
                 <img src="one-logo.png" alt="ONE桌遊">
                 <div style="display: flex; flex-direction: column; gap: 0;">
-                    <span style="font-size: 1.3em; font-weight: 900;">ONE桌遊</span>
-                    <span style="font-size: 0.5em; opacity: 0.6; font-weight: 400; letter-spacing: 0.5px;">by 遊戲家資訊科技</span>
+                    <span style="font-size: 1.3em; font-weight: 900; color: #00BCD4;">ONE桌遊</span>
+                    <span style="font-size: 0.5em; opacity: 0.8; font-weight: 400; letter-spacing: 0.5px; color: #424242;">by 遊戲家資訊科技</span>
                 </div>
             </div>
             <ul class="nav-links">
