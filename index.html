@@ -136,7 +136,7 @@
         .hero {
             min-height: 100vh;
             background: 
-                linear-gradient(135deg, rgba(10, 14, 39, 0.85) 0%, rgba(26, 31, 58, 0.75) 50%, rgba(10, 14, 39, 0.85) 100%),
+                linear-gradient(135deg, rgba(249, 250, 251, 0.85) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(249, 250, 251, 0.85) 100%),
                 url('images/room-large-pink.jpg') center center / cover no-repeat;
             display: flex;
             align-items: center;
@@ -314,19 +314,22 @@
 
         .section-title {
             text-align: center;
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            color: var(--primary);
-            text-shadow: 0 0 35px var(--glow);
-            letter-spacing: 1px;
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.25em;
-            color: #b0b0b0;
+            font-size: 1.4em;
+            color: var(--text-secondary);
             margin-bottom: 4rem;
+            font-weight: 500;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -352,35 +355,34 @@
 
         .stat {
             text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: rgba(26, 31, 58, 0.4);
-            border-radius: 25px;
-            border: 1px solid rgba(0, 245, 255, 0.15);
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 151, 167, 0.08));
+            border-radius: 28px;
+            border: 3px solid rgba(0, 188, 212, 0.25);
             transition: all 0.4s ease;
+            box-shadow: 0 4px 16px rgba(0, 188, 212, 0.15);
         }
 
         .stat:hover {
-            transform: translateY(-15px);
+            transform: translateY(-12px) scale(1.05);
             border-color: var(--primary);
-            box-shadow: 0 15px 50px var(--glow);
-            background: rgba(26, 31, 58, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.4);
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.15), rgba(0, 151, 167, 0.15));
         }
 
         .stat-number {
-            font-size: 3.2em;
+            font-size: 4em;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #00BCD4;
             display: block;
+            letter-spacing: -2px;
         }
 
         .stat-label {
-            color: #a0a0a0;
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-top: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-top: 0.8rem;
         }
 
         .about-grid {
@@ -392,16 +394,17 @@
         }
 
         .about-card {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.5), rgba(10, 14, 39, 0.5));
+            background: var(--bg-card);
             padding: 3rem 2.5rem;
-            border-radius: 25px;
-            border: 1px solid rgba(0, 245, 255, 0.15);
+            border-radius: 24px;
+            border: 2px solid var(--border-light);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             height: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .about-card::before {
@@ -410,8 +413,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            height: 5px;
+            background: linear-gradient(90deg, #00BCD4, #0097A7);
             transform: scaleX(0);
             transition: transform 0.3s;
         }
@@ -421,10 +424,10 @@
         }
 
         .about-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-12px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 25px 70px rgba(0, 245, 255, 0.4);
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.7), rgba(10, 14, 39, 0.7));
+            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
+            background: var(--bg-card);
         }
 
         .about-card h3 {
@@ -435,7 +438,7 @@
         }
 
         .about-card p {
-            color: #d0d0d0;
+            color: var(--text-secondary);
             font-size: 1.08em;
             line-height: 2.1;
             letter-spacing: 0.3px;
@@ -459,10 +462,10 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(10, 14, 39, 0.6));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(249, 250, 251, 0.6));
             padding: 3rem;
             border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
+            border: 2px solid var(--border-light);
             transition: all 0.3s;
             position: relative;
             display: flex;
@@ -546,34 +549,32 @@
         }
 
         .product-card {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.6));
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
+            background: var(--bg-card);
+            padding: 0;
+            border-radius: 24px;
+            border: 2px solid var(--border-light);
             transition: all 0.3s;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .product-card::before {
-            content: '🤖';
-            position: absolute;
-            top: -20px;
-            right: 20px;
-            font-size: 3em;
-            opacity: 0.1;
-            filter: grayscale(1);
+            content: '';
+            display: none;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px) scale(1.03);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 188, 212, 0.3);
         }
 
         .product-card h3 {
             font-size: 1.8em;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--primary);
+            font-weight: 800;
         }
 
         .product-card p {
@@ -609,10 +610,10 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(249, 250, 251, 0.8));
             padding: 3rem;
             border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
+            border: 2px solid var(--border-light);
         }
 
         .contact-info h3 {
@@ -958,35 +959,35 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3rem;">
                 <!-- 豪華包廂 -->
-                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;" 
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 2px solid var(--border-light); transition: all 0.4s ease; cursor: pointer;" 
                      onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
                      onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
                     <img src="images/room-luxury.jpg" alt="豪華包廂" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                    <div style="padding: 2rem; background: white;">
                         <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">🎯 豪華包廂</h3>
-                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">寬敞舒適的VIP包廂，配備麻將桌、沙發床、電視與豐富桌遊，適合4-8人聚會</p>
+                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05em;">寬敞舒適的VIP包廂，配備麻將桌、沙發床、電視與豐富桌遊，適合4-8人聚會</p>
                     </div>
                 </div>
 
                 <!-- 麻將主題大包廂 -->
-                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;"
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 2px solid var(--border-light); transition: all 0.4s ease; cursor: pointer;"
                      onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
                      onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
                     <img src="images/room-large-mahjong.jpg" alt="麻將主題大包廂" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                    <div style="padding: 2rem; background: white;">
                         <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">🀄 麻將主題大包廂</h3>
-                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">寬敞大包廂配備麻將桌、獨立沙發休憩區、投影設備，麻將主題牆面裝飾充滿特色</p>
+                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05em;">寬敞大包廂配備麻將桌、獨立沙發休憩區、投影設備，麻將主題牆面裝飾充滿特色</p>
                     </div>
                 </div>
 
                 <!-- 粉色主題大包廂 -->
-                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.4s ease; cursor: pointer;"
+                <div style="position: relative; border-radius: 25px; overflow: hidden; border: 2px solid var(--border-light); transition: all 0.4s ease; cursor: pointer;"
                      onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 60px var(--glow)';"
                      onmouseout="this.style.transform=''; this.style.borderColor='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='';">
                     <img src="images/room-large-pink.jpg" alt="粉色主題大包廂" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div style="padding: 2rem; background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.9));">
+                    <div style="padding: 2rem; background: white;">
                         <h3 style="color: var(--primary); font-size: 1.5em; margin-bottom: 1rem;">💕 粉色主題大包廂</h3>
-                        <p style="color: #d0d0d0; line-height: 1.8; font-size: 1.05em;">超大空間配備麻將桌、皮革沙發區、大螢幕電視，粉色主題牆營造溫馨浪漫氛圍</p>
+                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05em;">超大空間配備麻將桌、皮革沙發區、大螢幕電視，粉色主題牆營造溫馨浪漫氛圍</p>
                     </div>
                 </div>
             </div>
