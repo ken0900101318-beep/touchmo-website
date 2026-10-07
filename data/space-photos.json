@@ -1,5 +1,9 @@
 [
   {
+    "name": "one-fuda-lounge",
+    "caption": "新莊輔大店・沙發包廂"
+  },
+  {
     "name": "one-yizhong-room",
     "caption": "台中一中店・沙發包廂"
   },
@@ -22,5 +26,17 @@
   {
     "name": "one-yadong-green",
     "caption": "土城亞東店・綠色包廂"
+  },
+  {
+    "name": "one-fuda-green",
+    "caption": "新莊輔大店・綠色座椅包廂"
+  },
+  {
+    "name": "one-fuda-orange",
+    "caption": "新莊輔大店・暖橘沙發包廂"
+  },
+  {
+    "name": "one-fuda-cloud",
+    "caption": "新莊輔大店・藍天主題包廂"
   }
 ]

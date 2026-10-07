@@ -29,5 +29,5 @@ for old,target in json.loads((r/'data/redirects.json').read_text()).items():
  if old.endswith('/') or not p.suffix:p=p/'index.html'
  s=p.read_text();assert '0;url='+target in s;assert 'noindex,follow' in s
 assert 'data-story' not in (r/'franchise/system/index.html').read_text(),'Consumer story still in B2B'
-assert (r/'index.html').read_text().count('30 秒看懂')==1
+assert (r/'index.html').read_text().find('300,000') < (r/'index.html').read_text().find('想找地方玩？')
 print('PASS:',len(routes),'pages, metadata, unique IDs, local assets, legacy redirects, B2B separation')
