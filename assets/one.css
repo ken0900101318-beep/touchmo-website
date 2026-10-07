@@ -5,3 +5,5 @@
 @media(max-width:360px){.hero h1{font-size:62px}.hero .button{padding:12px 15px}.proof strong{font-size:37px}.proof{gap:25px}.gallery-item img{height:300px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 @media(min-width:1000px){.story-copy [role=tab]{min-height:175px;align-items:center}.app-story{align-items:start}.story-visual{margin-top:30px}}
+/* Show the complete real photo when enlarged, including tall room photographs. */
+.dialog-head h2{font-family:inherit;font-size:18px;line-height:1.5}dialog>img{max-height:calc(90dvh - 100px);width:auto;object-fit:contain}.system-images .kiosk-photo{max-width:440px}.kiosk-photo img{border-radius:2px;border:0}
