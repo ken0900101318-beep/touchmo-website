@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://home.onegame.tw/sitemap.xml
