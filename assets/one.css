@@ -7,3 +7,6 @@
 @media(min-width:1000px){.story-copy [role=tab]{min-height:175px;align-items:center}.app-story{align-items:start}.story-visual{margin-top:30px}}
 /* Show the complete real photo when enlarged, including tall room photographs. */
 .dialog-head h2{font-family:inherit;font-size:18px;line-height:1.5}dialog>img{max-height:calc(90dvh - 100px);width:auto;object-fit:contain}.system-images .kiosk-photo{max-width:440px}.kiosk-photo img{border-radius:2px;border:0}
+
+/* Keep the table and sofa in view within the private-room hero photo. */
+.hero-image>img{object-position:center 82%}
