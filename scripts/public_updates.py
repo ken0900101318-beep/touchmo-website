@@ -37,5 +37,5 @@ def apply(g):
     update('/franchise/',body)
     before_close('/franchise/', build_support + location + consultation)
 
-    planning = section('<div class="split"><div><h2>包廂或開放桌，<br>依空間與客群安排。</h2><p>包廂重視隱私與休憩空間；開放桌減少隔間，需一起考量鄰桌干擾與共用動線。</p></div><div><h3>常見配置參考</h3><p>包廂約 270 × 330 公分，可配置沙發。開放桌約 240 × 240 公分，共用走道另計。</p><p class="caption">以上為配置經驗，並非法定最低尺寸。桌椅、門片、消防與逃生需求須依實際物件確認。</p>'+link('/franchise/#site-support','提供物件，評估配置方向','button secondary')+'</div></div>', 'soft', 'planning')
+    planning = section('<div class="split"><div><h2>包廂或開放桌，<br>依空間與客群安排。</h2><p>包廂重視隱私與休憩空間；開放桌減少隔間，需一起考量鄰桌干擾與共用動線。</p></div><div><h3>空間規劃，從你的物件開始</h3><p>依場地條件、預算與經營方向，討論適合的包廂、開放桌與動線安排。</p>'+link('/franchise/#consultation','洽詢開店與空間規劃','button secondary')+'</div></div>', 'soft', 'planning')
     before_close('/spaces/', planning)
