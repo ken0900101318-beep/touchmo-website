@@ -26,8 +26,8 @@ def apply(g):
  def scene(name,caption,cl=''):
   return '<figure class="scene '+cl+'">'+media('/images/'+name+'.jpg',caption,'room')+'</figure>'
  spacebody=section('<div class="spaces-title"><p class="eyebrow">ONE SPACES</p><h1>留一個空間，<br>給相聚。</h1><p>不同城市，不同樣子。都是實際的 ONE。</p></div>','intro')
+ spacebody+=section(scene('one-yizhong-entrance','台中一中店・入口實景','scene-wide'),'photo-section')
  spacebody+=section(scene('one-fuda-lounge','新莊輔大店・沙發包廂','scene-wide'),'photo-section')
- spacebody+=section('<div class="scene-pair">'+scene('one-kunda-room','台南崑大店・門市實景')+scene('one-yizhong-entrance','台中一中店・推門之前')+'</div>','photo-section')
  spacebody+=section('<div class="section-head"><h2>挑一個，<br>喜歡的角落。</h2><p>座椅、色彩與光線，<br>每間店都有自己的性格。</p></div><div class="scene-trio">'+scene('one-guangcai-room','嘉義光彩店・暖橘座椅')+scene('one-yadong-green','土城亞東店・綠色包廂')+scene('one-yadong-yellow','土城亞東店・明亮包廂')+'</div>','photo-section')
  spacebody+=section('<div class="section-head"><h2>再多看一點。</h2><div class="gallery-controls"><button data-gallery-prev aria-label="上一張門市照片">←</button><button data-gallery-next aria-label="下一張門市照片">→</button></div></div>'+gallery(),'spaces-section')+section('<div class="closing"><h2>找到喜歡的空間，<br>就出發。</h2>'+link('/find/','查看各店座位與價格','button')+'</div>')
  P['/spaces/']=(P['/spaces/'][0],P['/spaces/'][1],spacebody)

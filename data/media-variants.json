@@ -67,23 +67,6 @@
       }
     ]
   },
-  "/images/one-kunda-room.jpg": {
-    "width": 1350,
-    "height": 1800,
-    "originalBytes": 322066,
-    "variants": [
-      {
-        "src": "/assets/optimized/one-kunda-room-480.webp",
-        "width": 480,
-        "bytes": 23798
-      },
-      {
-        "src": "/assets/optimized/one-kunda-room-960.webp",
-        "width": 960,
-        "bytes": 65558
-      }
-    ]
-  },
   "/images/one-yadong-sage.jpg": {
     "width": 1477,
     "height": 1108,

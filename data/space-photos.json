@@ -1,5 +1,9 @@
 [
   {
+    "name": "one-yizhong-entrance",
+    "caption": "台中一中店・入口實景"
+  },
+  {
     "name": "one-fuda-lounge",
     "caption": "新莊輔大店・沙發包廂"
   },
@@ -10,10 +14,6 @@
   {
     "name": "one-guangcai-room",
     "caption": "嘉義光彩店・麻將空間"
-  },
-  {
-    "name": "one-kunda-room",
-    "caption": "台南崑大店・門市實景"
   },
   {
     "name": "one-yadong-sage",
