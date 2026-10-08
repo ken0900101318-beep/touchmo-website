@@ -1,0 +1,304 @@
+{
+  "/images/one-yizhong-room.jpg": {
+    "width": 1108,
+    "height": 1477,
+    "originalBytes": 244845,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-yizhong-room-480.webp",
+        "width": 480,
+        "bytes": 24992
+      },
+      {
+        "src": "/assets/optimized/one-yizhong-room-960.webp",
+        "width": 960,
+        "bytes": 74216
+      }
+    ]
+  },
+  "/assets/one-admin-20261007.png": {
+    "width": 560,
+    "height": 1249,
+    "originalBytes": 172419,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-admin-20261007-480.webp",
+        "width": 480,
+        "bytes": 44422
+      }
+    ]
+  },
+  "/images/one-fuda-lounge.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 278776,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-fuda-lounge-480.webp",
+        "width": 480,
+        "bytes": 16568
+      },
+      {
+        "src": "/assets/optimized/one-fuda-lounge-960.webp",
+        "width": 960,
+        "bytes": 52134
+      },
+      {
+        "src": "/assets/optimized/one-fuda-lounge-1440.webp",
+        "width": 1440,
+        "bytes": 105284
+      }
+    ]
+  },
+  "/images/one-guangcai-room.jpg": {
+    "width": 1350,
+    "height": 1800,
+    "originalBytes": 337097,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-guangcai-room-480.webp",
+        "width": 480,
+        "bytes": 28428
+      },
+      {
+        "src": "/assets/optimized/one-guangcai-room-960.webp",
+        "width": 960,
+        "bytes": 74842
+      }
+    ]
+  },
+  "/images/one-kunda-room.jpg": {
+    "width": 1350,
+    "height": 1800,
+    "originalBytes": 322066,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-kunda-room-480.webp",
+        "width": 480,
+        "bytes": 23798
+      },
+      {
+        "src": "/assets/optimized/one-kunda-room-960.webp",
+        "width": 960,
+        "bytes": 65558
+      }
+    ]
+  },
+  "/images/one-yadong-sage.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 289378,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-yadong-sage-480.webp",
+        "width": 480,
+        "bytes": 14982
+      },
+      {
+        "src": "/assets/optimized/one-yadong-sage-960.webp",
+        "width": 960,
+        "bytes": 52244
+      },
+      {
+        "src": "/assets/optimized/one-yadong-sage-1440.webp",
+        "width": 1440,
+        "bytes": 115368
+      }
+    ]
+  },
+  "/images/one-yadong-yellow.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 233916,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-yadong-yellow-480.webp",
+        "width": 480,
+        "bytes": 12986
+      },
+      {
+        "src": "/assets/optimized/one-yadong-yellow-960.webp",
+        "width": 960,
+        "bytes": 36696
+      },
+      {
+        "src": "/assets/optimized/one-yadong-yellow-1440.webp",
+        "width": 1440,
+        "bytes": 70046
+      }
+    ]
+  },
+  "/images/one-yadong-green.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 252347,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-yadong-green-480.webp",
+        "width": 480,
+        "bytes": 13162
+      },
+      {
+        "src": "/assets/optimized/one-yadong-green-960.webp",
+        "width": 960,
+        "bytes": 40748
+      },
+      {
+        "src": "/assets/optimized/one-yadong-green-1440.webp",
+        "width": 1440,
+        "bytes": 82118
+      }
+    ]
+  },
+  "/images/one-fuda-green.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 326573,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-fuda-green-480.webp",
+        "width": 480,
+        "bytes": 19832
+      },
+      {
+        "src": "/assets/optimized/one-fuda-green-960.webp",
+        "width": 960,
+        "bytes": 72286
+      },
+      {
+        "src": "/assets/optimized/one-fuda-green-1440.webp",
+        "width": 1440,
+        "bytes": 142028
+      }
+    ]
+  },
+  "/images/one-fuda-orange.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 337114,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-fuda-orange-480.webp",
+        "width": 480,
+        "bytes": 21824
+      },
+      {
+        "src": "/assets/optimized/one-fuda-orange-960.webp",
+        "width": 960,
+        "bytes": 77566
+      },
+      {
+        "src": "/assets/optimized/one-fuda-orange-1440.webp",
+        "width": 1440,
+        "bytes": 156658
+      }
+    ]
+  },
+  "/images/one-fuda-cloud.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 273242,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-fuda-cloud-480.webp",
+        "width": 480,
+        "bytes": 18246
+      },
+      {
+        "src": "/assets/optimized/one-fuda-cloud-960.webp",
+        "width": 960,
+        "bytes": 53266
+      },
+      {
+        "src": "/assets/optimized/one-fuda-cloud-1440.webp",
+        "width": 1440,
+        "bytes": 97642
+      }
+    ]
+  },
+  "/images/one-yizhong-entrance.jpg": {
+    "width": 1477,
+    "height": 1108,
+    "originalBytes": 221706,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-yizhong-entrance-480.webp",
+        "width": 480,
+        "bytes": 18446
+      },
+      {
+        "src": "/assets/optimized/one-yizhong-entrance-960.webp",
+        "width": 960,
+        "bytes": 46164
+      },
+      {
+        "src": "/assets/optimized/one-yizhong-entrance-1440.webp",
+        "width": 1440,
+        "bytes": 75308
+      }
+    ]
+  },
+  "/assets/one-booking-20261007.png": {
+    "width": 1320,
+    "height": 2868,
+    "originalBytes": 1100646,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-booking-20261007-480.webp",
+        "width": 480,
+        "bytes": 53654
+      },
+      {
+        "src": "/assets/optimized/one-booking-20261007-960.webp",
+        "width": 960,
+        "bytes": 122748
+      }
+    ]
+  },
+  "/assets/one-stores-20261007.png": {
+    "width": 566,
+    "height": 1242,
+    "originalBytes": 426715,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-stores-20261007-480.webp",
+        "width": 480,
+        "bytes": 70482
+      }
+    ]
+  },
+  "/assets/one-checkout-20261007.png": {
+    "width": 1320,
+    "height": 2868,
+    "originalBytes": 467221,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-checkout-20261007-480.webp",
+        "width": 480,
+        "bytes": 29008
+      },
+      {
+        "src": "/assets/optimized/one-checkout-20261007-960.webp",
+        "width": 960,
+        "bytes": 65836
+      }
+    ]
+  },
+  "/images/one-guangcai-kiosk.jpg": {
+    "width": 1350,
+    "height": 1800,
+    "originalBytes": 438022,
+    "variants": [
+      {
+        "src": "/assets/optimized/one-guangcai-kiosk-480.webp",
+        "width": 480,
+        "bytes": 34636
+      },
+      {
+        "src": "/assets/optimized/one-guangcai-kiosk-960.webp",
+        "width": 960,
+        "bytes": 111108
+      }
+    ]
+  }
+}

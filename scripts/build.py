@@ -45,6 +45,9 @@ from audience import apply as apply_audience
 apply_audience(globals())
 from public_updates import apply as apply_public_updates
 apply_public_updates(globals())
+from media import optimize
+for route,(title,desc,body) in list(P.items()):
+ P[route]=(title,desc,optimize(body))
 header='<a class="skip" href="#main">跳至主要內容</a><header><div class="nav-wrap"><a href="/" class="brand" aria-label="ONE桌遊首頁"><img src="/one-logo.jpg" alt="" width="46" height="46"><span>ONE桌遊</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">選單</button><nav id="main-nav" aria-label="主要導覽">'+''.join(link(u,t,'nav-link') for u,t in nav)+link('/support/','客服','nav-link')+link(LINE,'諮詢加盟','button')+'</nav></div></header>'
 footer='<footer><div class="wrap"><div class="footer-top"><div><a class="brand" href="/"><img src="/one-logo.jpg" alt="" width="46" height="46"><span>ONE桌遊</span></a><p>想玩，就來。</p><small>A brand by GAMEHOME／遊戲家資訊科技</small></div><div class="footer-links">'+''.join(link(u,t) for u,t in nav)+link('/contact/','聯絡我們')+link('/privacy/','隱私與網站說明')+'</div></div><div class="footer-bottom"><span>© 2026 ONE桌遊</span><span>門市營業時間、設備與服務以各店公告為準。</span></div></div></footer><nav class="mobile-actions" aria-label="快速操作">'+link('/find/','找門市')+link(BOOK,'立即預約')+link('/support/','客服')+'</nav><dialog id="image-dialog" aria-labelledby="image-title"><div class="dialog-head"><h2 id="image-title"></h2><button data-close>關閉 ×</button></div><img alt=""></dialog>'
 asset_version=hashlib.sha256((R/'assets/one.css').read_bytes()+(R/'assets/one.js').read_bytes()).hexdigest()[:12]

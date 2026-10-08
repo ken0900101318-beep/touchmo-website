@@ -13,7 +13,10 @@ for old in json.loads((r/'data/redirects.json').read_text()):
 files.update(['assets/one.css','assets/one.js'])
 for name in list(files):
  if name.endswith('.html'):
-  for asset in re.findall(r'(?:src|data-src|data-image)="(/(?:assets|images)/[^"?]+)',(r/name).read_text()):files.add(asset.lstrip('/'))
+  for asset in re.findall(r'(?:src|data-src|data-image|data-deferred-src)="(/(?:assets|images)/[^"?]+)',(r/name).read_text()):files.add(asset.lstrip('/'))
+# Responsive variants are already sanitized derivatives of public imagery.
+for item in json.loads((r/'data/media-variants.json').read_text()).values():
+ files.update(v['src'].lstrip('/') for v in item['variants'])
 files.update('data/'+x for x in ['stores.json','brand-stats.json','space-photos.json'])
 for name in sorted(files):
  target=out/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(r/name,target)
